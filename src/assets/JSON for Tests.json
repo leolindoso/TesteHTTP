@@ -1,0 +1,50 @@
+{
+  "id": 1,
+  "name": "Angular",
+  "siteURL": "https://angular.io",
+  "description": "Learn one way to build applications with Angular and reuse your code and abilities to build apps for any deployment target. For web, mobile web, native mobile ..",
+  "tags": [
+    "angular",
+    "angularjs"
+  ]
+},
+{
+  "id": 2,
+  "name": "AngularJS — Superheroic JavaScript MVW Framework",
+  "siteURL": "https://angularjs.org/",
+  "description": "AngularJS is what HTML would have been, had it been designed for building web-apps. Declarative templates with data-binding, MVW, MVVM, MVC, ...",
+  "tags": [
+    "angular",
+    "angularjs"
+  ]
+},
+{
+  "id": 3,
+  "name": "AngularJS – Wikipédia, a enciclopédia livre",
+  "siteURL": "https://pt.wikipedia.org/wiki/AngularJS",
+  "description": "AngularJS é um framework JavaScript código aberto, mantido pelo Google, que auxilia na execução de single-page applications. Seu objetivo é aumentar ...",
+  "tags": [
+    "angular",
+    "angularjs"
+  ]
+},
+{
+  "id": 4,
+  "name": "React – A JavaScript library for building user interfaces",
+  "siteURL": "https://reactjs.org/",
+  "description": "React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right ...",
+  "tags": [
+    "react",
+    "react native"
+  ]
+},
+{
+  "id": 5,
+  "name": "React Native Tutorial: Estudando a biblioteca React JavaScript",
+  "siteURL": "https://www.devmedia.com.br/react-native-tutorial/32860",
+  "description": "Neste artigo conheceremos a biblioteca React JavaScript (React Native) lançada pelo Facebook. Veremos uma solução completa focado no iOS. Leia mais!",
+  "tags": [
+    "react",
+    "react native"
+  ]
+}

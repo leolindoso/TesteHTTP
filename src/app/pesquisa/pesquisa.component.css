@@ -1,0 +1,24 @@
+h5{
+    color: rgb(38, 38, 139);
+}
+p{
+    color: rgb(56, 119, 19);
+}
+
+.full-width-table {
+    width: 100%;
+  }
+  .data-table{
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .search-div{
+    margin-left: 20px;
+    padding-top: 10px;
+  }
+  
+  .search-form-field{
+    width: 80%;
+  }
+  

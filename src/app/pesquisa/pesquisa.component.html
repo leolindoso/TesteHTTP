@@ -1,0 +1,92 @@
+<div>
+    <nav class= "navbar navbar-expand-lg fixed-top bg-light">
+        <a  routerLink =""><img src="./src/assets/googleLogo.png" height="50px"></a>
+        <div style="text-align:center;align-items: center;justify-content: center;display: flex;">
+        <div ></div>
+            <form style= "width: 500px; margin-left: 2em;">
+                <input type="text" class="form-control" placeholder="Pesquisa" [(ngModel)] = "this.target" name ="target">
+            </form>
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <button type="button" class="btn btn-primary">{{situacao}}</button>
+                    <div class="btn-group show" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
+                    <div class="dropdown-menu show" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 36px, 0px);">
+                        <button class="dropdown-item btn btn-link" (click)="changeSituacao($event)">Recepção</button>
+                        <button class="dropdown-item btn btn-link" (click)="changeSituacao($event)">Emergência</button>
+                        <button class="dropdown-item btn btn-link" (click)="changeSituacao($event)">Encerrado</button>
+                        <button class="dropdown-item btn btn-link" (click)="changeSituacao($event)">Classf. de Risco</button>
+                        <button class="dropdown-item btn btn-link" (click)="changeSituacao($event)">Atendmento Médico</button>
+                        <button class="dropdown-item btn btn-link" (click)="changeSituacao($event)">Pós-Consulta</button>
+                        <button class="dropdown-item btn btn-link" (click)="changeSituacao($event)">Serviço Social</button>
+                        <button class="dropdown-item btn btn-link" (click)="changeSituacao($event)">Sutura</button>
+                    </div>
+                    </div>
+                </div>
+            <div style="margin: 2em">
+                <button class="btn btn-primary" (click)= "pesquisar(target,situacao)">Pesquisar</button>
+            </div>
+            
+        </div>
+    </nav>
+
+    <div class="mat-elevation-z8 data-table" style="margin-top: 10em; margin-bottom: 5em;">
+        <div class="search-div">
+          <mat-form-field class="search-form-field">
+              <input matInput type="text" placeholder="Buscar" (keyup)="applyFilter($event.target.value)" [(ngModel)]="value">
+              <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+              </button>
+          </mat-form-field>
+        </div>
+        <table mat-table class="full-width-table" [dataSource]="dataSource" matSort aria-label="Elements">
+          <!-- Id Column -->
+          <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
+            <td mat-cell *matCellDef="let row">{{row.nome}}</td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="numeroProtocolo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nº de Protocolo</th>
+            <td mat-cell *matCellDef="let row">{{row.numeroProtocolo}}</td>
+          </ng-container>
+      
+          <ng-container matColumnDef="situacao">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Situação</th>
+              <td mat-cell *matCellDef="let row">{{row.situacao}}</td>
+            </ng-container>
+            <ng-container matColumnDef="horario">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Horário</th>
+                <td mat-cell *matCellDef="let row">{{row.Tempo}}</td>
+            </ng-container>
+            <ng-container matColumnDef="button">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                <td mat-cell *matCellDef="let row"><div class="btn-group" role="group">
+                    <button mat-raised-button id="btnGroupDrop" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 36px, 0px);">
+                    <button class="dropdown-item btn btn-link">Ação1</button>
+                    <button class="dropdown-item btn btn-link ">Ação2</button>
+                    </div></div></td>
+            </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+        <mat-paginator #paginator
+            [length]="this.pesquisaService.dados.Data.length"
+            [pageIndex]="0"
+            [pageSize]="2"
+            [pageSizeOptions]="[2,25, 50, 100, 250]">
+        </mat-paginator>
+      </div>
+      
+    <div class="container">
+        <div>   
+            <div *ngIf="this.pesquisaService.semResultado" >
+                <h5>Sem resultados para esta pesquisa!</h5>
+            </div>
+        </div>         
+    </div>
+</div>
+
